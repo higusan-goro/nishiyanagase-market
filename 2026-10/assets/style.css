@@ -47,6 +47,13 @@ img{max-width:100%;display:block}
 a{color:var(--shu-dark)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--sumi);outline-offset:3px}
 
+/* ---- archive note(記録として固定したことを示す帯) ---- */
+.archive-note{
+  margin:0;padding:10px var(--gutter);background:var(--sumi);color:var(--kinari);
+  font-size:.84rem;line-height:22px;text-align:center;letter-spacing:.04em; /* 行の高さを整数にし、下の本体を端数ピクセルでずらさない */
+}
+.archive-note a{color:var(--kinari);margin-left:.6em;white-space:nowrap}
+
 /* ---- poster frame ---- */
 .sheet{
   position:relative;
