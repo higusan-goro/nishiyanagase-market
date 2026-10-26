@@ -1,0 +1,7 @@
+# GitHub Pages の設定
+# 作業用の文書・道具をWebページとして公開しないための除外リスト。
+# (リポジトリ自体は公開なので、GitHub上では誰でも読める点に注意)
+exclude:
+  - docs
+  - tools
+  - README.md
