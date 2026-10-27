@@ -42,6 +42,8 @@ for (const w of widths) {
     const state = await evalJs(`JSON.stringify({open:document.getElementById('lightbox').getAttribute('open-state'),src:document.getElementById('lightboxImg').getAttribute('src').slice(0,40),cap:document.getElementById('lightboxCap').textContent})`);
     console.log("lightbox", state);
   }
+  // 遅延読み込みの画像を読み込ませるため、下までスクロールしてから上に戻す
+  await evalJs(`(async()=>{for(let y=0;y<document.documentElement.scrollHeight;y+=600){scrollTo(0,y);await new Promise(r=>setTimeout(r,120));}scrollTo(0,0);await new Promise(r=>setTimeout(r,800));})()`);
   const full = mode !== "lightbox";
   const height = full ? await evalJs("document.documentElement.scrollHeight") : h;
   const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: full, clip: { x: 0, y: 0, width: w, height, scale: 1 } });
