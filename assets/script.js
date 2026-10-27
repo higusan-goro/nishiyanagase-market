@@ -76,14 +76,21 @@ document.documentElement.classList.add('js');
 
 // スズラン灯:読み進めた割合に応じて、左右の灯りを上から1つずつともす
 (function(){
+  // 灯りの形(昭和3年のスズラン灯:乳白色のホヤ7個を鈴蘭の花のようにつけた街路灯)と、左右の置き場所を作る
+  var NS='http://www.w3.org/2000/svg';
+  document.body.insertAdjacentHTML('afterbegin',
+    '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="suzuran" viewBox="0 0 80 120">'+
+    '<g stroke="#221e1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M40 22V118"/><path d="M8 40Q40 4 72 40"/><path d="M28 118h24"/></g>'+
+    '<g stroke="#221e1a" stroke-width="2.5" stroke-linejoin="round">'+
+    ['M2 50','M14 36','M27 28','M41 28','M54 36','M66 50','M34 56'].map(function(m){return '<path d="'+m+'q0-10 6-10q6 0 6 10l-3 2-3-2-3 2z"/>';}).join('')+
+    '</g></symbol></svg><div class="lamps lamps-l" aria-hidden="true"></div><div class="lamps lamps-r" aria-hidden="true"></div>');
   var sides=document.querySelectorAll('.lamps');
-  if(!sides.length) return;
   var per=6, lamps=[];
   sides.forEach(function(side){
     for(var i=0;i<per;i++){
-      var svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      var svg=document.createElementNS(NS,'svg');
       svg.setAttribute('viewBox','0 0 80 120');
-      var use=document.createElementNS('http://www.w3.org/2000/svg','use');
+      var use=document.createElementNS(NS,'use');
       use.setAttribute('href','#suzuran'); svg.appendChild(use); side.appendChild(svg);
     }
   });

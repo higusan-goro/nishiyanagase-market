@@ -153,7 +153,6 @@ body:has(.draft-band){padding-bottom:64px}
   .next-card .card-body{padding:56px;align-self:center}
   .next-when{font-size:clamp(36px,2.8vw,60px)}
   .archive-card .card-img{grid-row:1}
-  .archive-card .photo-wrap{grid-column:1 / -1;border-top:var(--bd)}
 }
 
 /* 次の開催(大きく見せ、カード全体を押すと第2回のページへ) */
@@ -267,38 +266,10 @@ body:not(:has(.draft-band)) .to-top{bottom:calc(var(--frame) + 16px)}
 
 .welcome{font-weight:900;font-size:var(--fs-lead);line-height:1.7;color:var(--shu-dark)}
 
-/* 区切り線と小見出し(手本:白い6px線+24pxの見出し) */
-.rule-head{border-top:6px solid var(--kinari-deep);margin:40px 0 24px;padding-top:24px;font-weight:900;font-size:24px;line-height:1.3}
-.photo-wrap{padding-top:0}
-.photo-wrap .rule-head{margin-top:0}
-@media (min-width:1080px){.photo-wrap{padding-top:var(--card-pad)}.photo-wrap .rule-head{border-top:0;padding-top:0}}
-
 .past-title{margin:0 0 20px;font-family:var(--mincho);font-weight:800;font-size:clamp(32px,3vw,48px);line-height:1.3}
 .past-title span{display:block;font-family:var(--gothic);font-size:20px;font-weight:700}
 
-/* 数字 */
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 24px}
-.stats div{background:var(--kinari-deep);border-radius:8px;padding:12px 16px}
-.stats div:last-child{grid-column:1 / -1}
-.stats dt{font-size:var(--fs-small);font-weight:700}
-.stats dd{margin:0;font-size:var(--fs-note);font-weight:700}
-.stats b{font-weight:900;font-size:36px;color:var(--shu-dark);margin:0 2px;line-height:1.3}
-
-/* 写真のカード(手本:REPORT・INTERVIEW のラベル付きカード) */
-.photo-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media (min-width:1080px){.photo-cards{grid-template-columns:repeat(3,1fr)}}
-.photo-cards li{position:relative;border:var(--bd);border-radius:var(--r-card);overflow:hidden;background:var(--kinari-deep)}
-.photo-cards img{width:100%}
-.photo-cards .tab{position:absolute;top:0;left:0;background:var(--yamabuki);border-right:var(--bd);border-bottom:var(--bd);
-  border-bottom-right-radius:20px;padding:4px 14px 6px 12px;font-weight:900;font-size:var(--fs-small);line-height:1.4}
-.photo-cards li:nth-child(even) .tab{background:var(--kinari)}
-
-/* SNS・お問い合わせ(手本:白いカード、上に6pxの色線) */
-.mini{max-width:var(--card);margin:16px auto 0;background:var(--kinari-light);border:var(--bd);border-radius:var(--r-card);
-  padding:clamp(28px,5vw,64px);position:relative;overflow:hidden}
-.mini::before{content:"";display:block;border-top:6px solid var(--shu);margin-bottom:24px}
-.mini h2{margin:0;font-weight:900;font-size:24px;line-height:1.3}
-.mini .sub{margin:6px 0 20px;font-size:var(--fs-note);font-weight:700}
+/* SNS・お問い合わせ(フッターの中で使う) */
 .sns-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:0 8px;border:var(--bd);border-radius:var(--r-pill);padding:14px 20px;
   text-decoration:none;font-weight:900;font-size:17px;text-align:center}
 .sns-bar:hover{background:var(--kinari)}
@@ -313,52 +284,35 @@ body:not(:has(.draft-band)) .to-top{bottom:calc(var(--frame) + 16px)}
   .contact dt{justify-self:start}
   .box{padding:20px 16px}
 }
-.watermark{position:absolute;right:-40px;bottom:-40px;width:240px;opacity:.12;pointer-events:none}
 .copy{max-width:var(--card);margin:12px auto 0;padding:0 0 calc(var(--frame) + 48px);text-align:right;font-weight:700;font-size:var(--fs-small);color:var(--sumi)}
 
-/* ============ 各回のページ(手本:/2026) ============ */
-.event{background:var(--kinari-deep)}
-.event .gnav-pill,.event .gnav-toggle{background:var(--kinari-light)}
-.ev-visual{position:relative;padding:calc(var(--frame) + 64px) 24px 32px;background:var(--kinari);
-  background-image:radial-gradient(circle at 50% 50%,var(--kinari-deep) 0 38%,transparent 39%);background-size:220px 220px;
-  display:flex;flex-direction:column;align-items:center;gap:24px}
-.ev-visual img{width:min(320px,72vw)}
-.ev-main{padding:32px calc(var(--frame) + 16px) calc(var(--frame) + 48px)}
-.ev-intro{max-width:var(--card-event);margin:0 auto 48px;font-weight:900;font-size:var(--fs-lead);line-height:1.8}
-.ev-date{display:inline-flex;flex-direction:column;background:var(--kinari-light);border:var(--bd);border-radius:var(--r-card);
-  padding:14px 24px;line-height:1.35}
-.ev-date .no{font-weight:900;font-size:16px}
-.ev-date .when{font-family:var(--mincho);font-weight:800;font-size:clamp(28px,3vw,36px)}
-.ev-date .where{font-weight:700;font-size:16px}
-@media (min-width:1080px){
-  /* 左半分にロゴを固定し、右半分のカードだけがスクロールする */
-  .ev-wrap{display:grid;grid-template-columns:1fr 1fr}
-  .ev-visual{position:sticky;top:0;height:100vh;justify-content:center;padding:40px}
-  .ev-visual img{width:min(380px,30vw)}
-  .ev-main{padding:96px 48px 64px 0}
-  .ev-intro{margin-left:0}
-}
-
-/* 右側に縦書きの英字ラベルを添えたカード */
-.ev-sec{position:relative;max-width:calc(var(--card-event) + 64px);margin:0 auto 24px;padding-right:56px;scroll-margin-top:80px}
-@media (min-width:1080px){.ev-sec{margin-left:0}}
-.ev-label{position:absolute;top:0;right:0;width:48px;writing-mode:vertical-rl;font-weight:900;font-size:clamp(32px,3vw,48px);
-  line-height:1;letter-spacing:.06em;white-space:nowrap}
-.ev-label small{display:block;font-size:14px;letter-spacing:.1em;margin-top:12px}
-/* スマホでは縦書きラベルをカードの上に横書きで置き、本文の幅を確保する */
-@media (max-width:599px){
-  .ev-sec{padding-right:0}
-  .ev-label{position:static;width:auto;writing-mode:horizontal-tb;font-size:32px;margin:0 0 12px}
-  .ev-label small{display:inline;margin:0 0 0 10px}
-}
-.ev-card + .ev-card{margin-top:24px}
-.ev-card{scroll-margin-top:80px}
-.ev-card{background:var(--kinari);border:var(--bd);border-radius:var(--r-card);overflow:hidden}
-.ev-body{padding:clamp(24px,5vw,44px)}
-.ev-body h3{margin:0 0 12px;font-weight:900;font-size:clamp(24px,2.4vw,30px);line-height:1.35}
-.ev-body .num{display:block;font-weight:900;font-size:20px;line-height:1;margin-bottom:8px}
+/* ============ 各回のページ(総合トップと同じ部品で組む) ============ */
 .t-shu{background:var(--tint-shu)} .t-yamabuki{background:var(--tint-yamabuki)}
 .t-sumi{background:var(--tint-sumi)} .t-ai{background:var(--tint-ai)} .t-light{background:var(--kinari-light)}
+.sec-note{max-width:var(--card);margin:-8px auto 20px;text-align:center;font-weight:700;font-size:var(--fs-note)}
+.contents-grid{max-width:var(--card);margin:0 auto;display:grid;gap:24px;align-items:start}
+@media (min-width:1080px){.contents-grid{grid-template-columns:1fr 1fr}}
+.content-card{scroll-margin-top:96px}
+.content-card .card-body{padding:clamp(24px,3.4vw,48px)}
+.content-card .num{margin:0;font-family:var(--mincho);font-weight:800;font-size:28px;line-height:1;color:var(--shu-dark)}
+.content-card h3{margin:6px 0 10px;font-weight:900;font-size:clamp(24px,1vw + 18px,30px);line-height:1.35}
+.jump-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.jump-list a{display:flex;align-items:center;gap:12px;border:3px solid var(--sumi);border-radius:var(--r-pill);padding:8px 18px;
+  background:var(--kinari-light);font-weight:900;text-decoration:none}
+.jump-list a::after{content:"↓";margin-left:auto}
+.jump-list a:hover{background:var(--yamabuki)}
+.jump-list span{color:var(--shu-dark)}
+@media (max-width:479px){.jump-list a{padding:8px 14px;font-size:16px;gap:8px}.jump-list a span{flex:none}}
+.please-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:1080px){.please-list{grid-template-columns:repeat(3,1fr)}}
+.please-list li{background:var(--kinari-deep);border-radius:8px;border-top:6px solid var(--yamabuki);padding:16px 20px;font-size:var(--fs-body)}
+.please-list b{display:block;font-size:20px;margin-bottom:4px}
+h3.sub{margin:0 0 8px;font-weight:900;font-size:22px}
+.foot .tags{margin-top:16px}
+.foot .tags li{background:var(--kinari-14);color:var(--kinari)}
+.foot-back{margin-top:24px}
+.foot-back a{font-weight:900}
+.foot-back a::before{content:"← "}
 
 /* 出店者の一覧(カードの中) */
 .shops{list-style:none;margin:16px 0 0;padding:0;border-top:2px solid var(--sumi)}
@@ -371,36 +325,28 @@ body:not(:has(.draft-band)) .to-top{bottom:calc(var(--frame) + 16px)}
 .shops a:hover .nm{color:var(--shu-dark)}
 
 /* 表(手本:開催概要・ノベルティの行) */
-.rows{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--sumi)}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--sumi)}
 .rows li{display:grid;grid-template-columns:6.5em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--sumi)}
 .rows b{font-weight:900}
 .rows small{display:block;font-size:var(--fs-note)}
-.please li{grid-template-columns:1fr}
-.map-btn{display:block;width:100%;padding:0;margin:16px 0 0;border:var(--bd);border-radius:var(--r-img);overflow:hidden;
+.map-btn{display:block;width:100%;padding:0;margin:0;border:var(--bd);border-radius:var(--r-img);overflow:hidden;
   background:var(--kinari-light);cursor:zoom-in}
 .note{font-size:var(--fs-note);margin:8px 0 0}
 .flyers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
 .flyers .zoom{display:block;padding:0;border:2px solid var(--sumi);border-radius:8px;overflow:hidden;background:none;cursor:zoom-in}
 .sponsors{border-radius:8px;background:var(--kinari-light);padding:12px}
 
-/* 目次・ハッシュタグ(手本:白いカードに区切り線) */
-.ev-index{list-style:none;margin:0;padding:0}
-.ev-index li{border-top:6px solid var(--kinari-deep)}
-.ev-index li:last-child{border-bottom:6px solid var(--kinari-deep)}
-.ev-index a{display:flex;align-items:baseline;gap:16px;padding:14px 0;text-decoration:none}
-.ev-index b{font-weight:900;font-size:22px;min-width:5.5em}
-.ev-index span{font-weight:700;font-size:var(--fs-note)}
-.ev-index a:hover b{color:var(--shu-dark)}
 .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
 .tags li{background:var(--kinari-deep);border-radius:var(--r-pill);padding:2px 12px;font-weight:900;font-size:var(--fs-small)}
-.event .mini{max-width:var(--card-event);margin:16px auto 0;border:0}
-.event .mini::before{border-color:var(--kinari-deep)}
-@media (min-width:1080px){.event .mini{margin-left:0}}
-.event .copy{max-width:var(--card-event);color:var(--sumi);margin:12px auto 0}
-@media (min-width:1080px){.event .copy{margin-left:0}}
 
 /* ---- 街の歴史のページ ---- */
-.story p{font-size:var(--fs-lead);font-weight:700;line-height:1.95;margin-bottom:1.2em}
+.sec-first{padding-top:calc(var(--frame) + 96px)}
+.story{max-width:760px;margin:0 auto}
+.story > .story-catch{text-align:center;font-family:var(--mincho);font-weight:800;font-size:clamp(30px,2vw + 20px,48px);line-height:1.45;color:var(--shu-dark);margin-bottom:1em}
+.story > .welcome{text-align:center;font-family:var(--mincho);font-weight:800;font-size:clamp(26px,1.6vw + 18px,40px);
+  line-height:1.5;margin:1.6em 0 1em}  /* 結びのひとことを大きく強調する */
+.story-next{display:flex;width:fit-content;margin:8px auto 40px;text-decoration:none}
+.story > p:not(.story-catch):not(.welcome){font-size:var(--fs-lead);font-weight:700;line-height:1.95;margin-bottom:1.2em}
 .sources{margin:0;padding-left:1.2em;font-size:var(--fs-note)}
 
 /* ---- 拡大表示 ---- */
