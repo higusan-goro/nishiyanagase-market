@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+<!-- チラシの飾り(星・音符・赤い曲線)を淡くした地紋。生成りの地に敷く -->
+<g fill="#efe2c7">
+  <path d="M60 30 l7 15 16 2 -12 11 3 16 -14-8 -14 8 3-16 -12-11 16-2z"/>
+  <path d="M232 196 l5 11 12 1.5 -9 8 2 12 -10-6 -10 6 2-12 -9-8 12-1.5z"/>
+</g>
+<g fill="none" stroke="#ecdcbd" stroke-width="4" stroke-linecap="round">
+  <path d="M250 70 v-34 l22 -6 v30"/>
+  <path d="M96 236 v-30"/>
+</g>
+<g fill="#ecdcbd">
+  <ellipse cx="243" cy="71" rx="8" ry="6"/><ellipse cx="265" cy="61" rx="8" ry="6"/>
+  <ellipse cx="89" cy="237" rx="8" ry="6"/>
+</g>
+<path d="M140 120 q30 -40 60 0 t60 0" fill="none" stroke="#f2d6cd" stroke-width="3" stroke-linecap="round"/>
+<path d="M10 300 q24 -30 48 0" fill="none" stroke="#f2d6cd" stroke-width="3" stroke-linecap="round"/>
+</svg>
