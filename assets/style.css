@@ -114,6 +114,7 @@ body:has(.draft-band){padding-bottom:64px}
   clip-path:polygon(0 0,100% 0,calc(100% - 18px) 50%,100% 100%,0 100%,18px 50%);font-weight:900;line-height:1.2}
 .ribbon .no{font-size:clamp(18px,1.2vw + 12px,24px)}
 .ribbon .when{font-family:var(--mincho);font-weight:800;font-size:clamp(30px,1.6vw + 18px,44px);letter-spacing:.02em}
+.ribbon .when small{font-size:.6em}
 .ribbon .tag{font-size:clamp(18px,1.2vw + 12px,24px);color:var(--yamabuki)}
 .ribbon .go{flex-basis:100%;font-size:var(--fs-note);font-weight:900}
 .ribbon .go::after{content:" →"}
@@ -162,6 +163,7 @@ body:has(.draft-band){padding-bottom:64px}
 .next-when{margin:0;font-family:var(--mincho);font-weight:800;font-size:clamp(30px,3.2vw + 18px,72px);line-height:1.15;letter-spacing:.01em}
 .next-when b{font-size:1.25em;color:var(--shu-dark)}
 .next-when{white-space:nowrap}
+.next-when small{font-size:.6em}
 .next-tag{display:inline-block;margin:10px 0 20px;background:var(--sumi);color:var(--yamabuki);border-radius:var(--r-pill);
   padding:4px 20px;font-weight:900;font-size:20px}
 .next-text{font-size:var(--fs-lead);font-weight:700;line-height:1.8}
@@ -177,7 +179,7 @@ body:has(.draft-band){padding-bottom:64px}
 .daynight-lead{margin:0 0 10px;font-weight:900;font-size:var(--fs-lead)}
 .daynight li{display:flex;align-items:center;gap:14px;font-weight:900;font-size:var(--fs-body);line-height:1.5}
 .daynight small{display:block;font-weight:700;font-size:var(--fs-note)}
-.daynight em{font-style:normal;margin-left:8px;background:var(--shu);color:var(--kinari);border-radius:var(--r-pill);padding:1px 10px;font-size:var(--fs-small)}
+.daynight em{font-style:normal;white-space:nowrap;margin-left:8px;background:var(--shu);color:var(--kinari);border-radius:var(--r-pill);padding:1px 10px;font-size:var(--fs-small)}
 .daynight b{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:var(--mincho);font-weight:800;font-size:22px;
   background:var(--yamabuki);border:3px solid var(--sumi)}
 .daynight li + li b{background:var(--sumi);color:var(--yamabuki)}
@@ -308,6 +310,13 @@ body:not(:has(.draft-band)) .to-top{bottom:calc(var(--frame) + 16px)}
 .please-list li{background:var(--kinari-deep);border-radius:8px;border-top:6px solid var(--yamabuki);padding:16px 20px;font-size:var(--fs-body)}
 .please-list b{display:block;font-size:20px;margin-bottom:4px}
 h3.sub{margin:0 0 8px;font-weight:900;font-size:22px}
+/* 会場への行き方 */
+@media (min-width:1080px){.access-list{grid-template-columns:repeat(2,1fr)}}
+.access-list p{margin:0 0 .6em}
+.access-list .how{display:inline-block;margin-right:8px;background:var(--sumi);color:var(--kinari);border-radius:var(--r-pill);padding:1px 10px;font-size:var(--fs-small);font-weight:900}
+.access-btn{display:flex;align-items:center;justify-content:center;text-align:center;min-height:60px;margin-top:12px;padding:12px 18px;border:var(--bd);
+  border-radius:var(--r-pill);font:900 var(--fs-body) var(--gothic);color:var(--sumi);background:var(--kinari);text-decoration:none}
+.access-btn:hover{background:var(--yamabuki)}
 .foot .tags{margin-top:16px}
 .foot .tags li{background:var(--kinari-14);color:var(--kinari)}
 .foot-back{margin-top:24px}
